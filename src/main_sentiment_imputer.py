@@ -1,8 +1,3 @@
-
-# example usage
-# python3 src/sentiment_imputer_AE.py --data_path /data1/groups/SUL_TWITTER/worldgeo --output_path data/Ida_aug-sept-21/sentiment_scores --years '2021' --months '8' '9' --tweet_type 'worldgeo'
-
-
 import argparse
 import json
 import multiprocessing
@@ -16,10 +11,8 @@ import glob
 import time
 import re
 
-
 from utils.data_read_in import clean_for_content
 from utils.emb_sentiment_imputer import create_embeddings
-
 
 def extract_latest_file(path):
     """
@@ -28,7 +21,6 @@ def extract_latest_file(path):
     files = glob.glob(os.path.join(path, "*"))
     latest_file = max(files, key=os.path.getctime)
     return latest_file
-
 
 def extract_latest_ind(args, year):
     """
@@ -49,7 +41,6 @@ def extract_date(basename):
     date_index = re.search(r"\d", basename).start()
     end_index = basename.index(".")
     return basename[date_index:end_index]
-
 
 def extract_month_files(args, year):
     """
@@ -79,7 +70,6 @@ def extract_month_files(args, year):
 
     return args.file_names[low_ind:(high_ind + 1)]
 
-
 def gz_to_dataframe(file_path):
     """
     Converts .txt.gz file to pandas DataFrame format. The tweet text, language, message ID and user ID are saved
@@ -108,13 +98,14 @@ def gz_to_dataframe(file_path):
     df = pd.DataFrame(tweets)
     return df
 
-
 def impute_sentiment_embed(file_name, year, args):
     """
     Impute sentiment scores based on the sentence embeddings created by BERT. Sentiment score is the predicted
     probability of the tweet belonging to positive class.
-        @param file: file name for which sentiment will be computed. Note, it is a file name and not a full path
-        @param args: arguments from ArgParser
+    Params
+        file_name: file name for which sentiment will be computed. Note, it is a file name and not a full path
+        year: year of the tweets
+        args: arguments from ArgParser
     """
     file_path = os.path.join(args.data_path, year, file_name)
     df = gz_to_dataframe(file_path)
@@ -140,12 +131,12 @@ def impute_sentiment_embed(file_name, year, args):
     scores = df[['message_id', 'user_id', 'score']]  # data frame with only the message ID's, tweet ID's and sentiment scores
     return scores
 
-
 def imputer(file_name, year, args):
     """
     Imputer function to call the impute_sentiment sub-function and write the output to a csv file
-        @param file_name: file name for which sentiment will be computed. Note, it is a file name and not a full path
-        @param args: arguments from ArgParser
+    Params
+        file_name: file name for which sentiment will be computed. Note, it is a file name and not a full path
+        args: arguments from ArgParser
     """
     try:
         senti_scores = impute_sentiment_embed(file_name, year, args)
@@ -220,21 +211,5 @@ if __name__ == '__main__':
             print("Runtime: {} minutes\n\n".format(round((time.time() - start) / 60, 1)))
 
     print("Done. All sentiment scores computed.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
