@@ -1,5 +1,7 @@
 ### Organization of folder
 
+Code and setup is my own.
+
 - `main_affected_tweets.py` 
 
 - `main_senti_aggregator.py` 
