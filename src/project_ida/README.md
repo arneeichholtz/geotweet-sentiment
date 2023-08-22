@@ -1,7 +1,6 @@
 ## Organization of folder
 
-- `main_affected_tweets.py` Main script to extract the tweets from users in a designated affected area. For instance, if we wish to select all tweets originating from the United States, the result is a subset of the database with only those tweets. The tweet data is retrieved from data_path; the output tweet data is saved to output_path.
-aff_cities_path is a folder with files that contain the names of cities in the affected areas.
+- `main_affected_tweets.py` 
 
 - `main_senti_aggregator.py` 
 
@@ -15,10 +14,19 @@ aff_cities_path is a folder with files that contain the names of cities in the a
 
 ### Example usage of scripts
 
-### Compute sentiment scores:
+### Main affected tweets:
+# onepercent tweets:
 ```
-python3 src/main_sentiment_imputer.py --data_path /data1/groups/SUL_TWITTER/worldgeo --output_path data/Ida_aug-sept-21/sentiment_scores --years '2021' --months '8' '9' --tweet_type 'worldgeo'
+python3 src/project_ida/main_affected_tweets.py --data_path /data1/groups/SUL_TWITTER --output_path data/Ida_aug-sept-21/affect_tweets --aff_cities_path data/Ida_aug-sept-21/affect_area_files --years '2021' --months '8' '9' --country 'United States' --tweet_type 'onepercent' --areas 'full_country' 'north' 'south' 
 ```
+
+# worldgeo tweets:
+```
+python3 src/project_ida/main_affected_tweets.py --data_path /data1/groups/SUL_TWITTER --output_path data/Ida_aug-sept-21/affect_tweets --years '2021' --months '8' '9' --country 'United States' --tweet_type 'worldgeo' --areas 'full_country'
+```
+
+
+
 
 ### Train nn:
 ```
