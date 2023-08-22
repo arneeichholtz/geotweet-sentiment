@@ -1,5 +1,7 @@
 ## Organization of folder
 
+Code adapted from Covid sentiment Nature paper, see this repository: https://github.com/Jianghao/Sentiment_COVID-19
+
 - `main_sentiment_imputer.py` computes sentiment scores
 
 - `setup_emb_clf.py` trains neural network on 1.6mln labeled tweets
