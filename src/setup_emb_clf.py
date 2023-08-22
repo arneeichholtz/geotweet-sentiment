@@ -1,5 +1,3 @@
-# python3 src/setup_emb_clf.py --max_seq_length 64
-
 import pandas as pd
 import numpy as np
 from sentence_transformers import SentenceTransformer

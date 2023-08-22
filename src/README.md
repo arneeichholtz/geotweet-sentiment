@@ -15,4 +15,9 @@
 python3 src/main_sentiment_imputer.py --data_path /data1/groups/SUL_TWITTER/worldgeo --output_path data/Ida_aug-sept-21/sentiment_scores --years '2021' --months '8' '9' --tweet_type 'worldgeo'
 ```
 
+### Train nn:
+```
+python3 src/setup_emb_clf.py --max_seq_length 64
+```
+
 
