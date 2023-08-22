@@ -1,4 +1,4 @@
-## Organization of folder
+### Organization of folder
 
 - `main_affected_tweets.py` 
 
@@ -12,15 +12,15 @@
 
 - `unique_users.py` 
 
-### Example usage of scripts
+# Example usage of scripts
 
-### Main affected tweets:
-# onepercent tweets:
+# Main affected tweets:
+### onepercent tweets:
 ```
 python3 src/project_ida/main_affected_tweets.py --data_path /data1/groups/SUL_TWITTER --output_path data/Ida_aug-sept-21/affect_tweets --aff_cities_path data/Ida_aug-sept-21/affect_area_files --years '2021' --months '8' '9' --country 'United States' --tweet_type 'onepercent' --areas 'full_country' 'north' 'south' 
 ```
 
-# worldgeo tweets:
+### worldgeo tweets:
 ```
 python3 src/project_ida/main_affected_tweets.py --data_path /data1/groups/SUL_TWITTER --output_path data/Ida_aug-sept-21/affect_tweets --years '2021' --months '8' '9' --country 'United States' --tweet_type 'worldgeo' --areas 'full_country'
 ```
