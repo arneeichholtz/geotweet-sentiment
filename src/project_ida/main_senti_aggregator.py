@@ -1,8 +1,4 @@
-# example usage:
-
-# python3 src/project_ida/main_senti_aggregator.py --senti_scores_path data/Ida_aug-sept-21/sentiment_scores --aff_tweets_path data/Ida_aug-sept-21/affect_tweets --output_path data/Ida_aug-sept-21/aggregated_sentiment --years '2021' --tweet_type 'onepercent' --areas 'north' 'south'
-
-# Params:
+# Example params:
 # --senti_scores_path data/Ida_aug-sept-21/sentiment_scores
 # --aff_tweets_path data/Ida_aug-sept-21/affect_tweets
 # --output_path data/Ida_aug-sept-21/aggregated_sentiment
