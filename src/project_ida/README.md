@@ -2,17 +2,17 @@
 
 Code and setup is my own.
 
-- `main_affected_tweets.py` 
+- `main_affected_tweets.py`: script to find tweets from users of the affected area (in this case affected by Hurricane Ida).
 
-- `main_senti_aggregator.py` 
+- `main_senti_aggregator.py`: script to aggregate the sentiment scores with the user location.
 
-- `prepare_files.py` 
+- `prepare_files.py`: script to generate the files used for the location inference, selecting cities, counties and making regex.
 
-- `inference.py` 
+- `inference.py`: contains wrapper class for location inference.
 
-- `tweet_file.py` 
+- `tweet_file.py`: contains class for the data, ie files with tweets. 
 
-- `unique_users.py` 
+- `unique_users.py`: contains class to save unique users over entire database. 
 
 ## Example usage of scripts
 
