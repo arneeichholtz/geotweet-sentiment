@@ -6,7 +6,7 @@ Code partly adapted from Covid sentiment Nature paper, see this repository: http
 
 - `setup_emb_clf.py` trains neural network on 1.6mln labeled tweets
 
-- `project_ida` folder for location inference for Hurricane Ida Project
+- `project_ida` folder for location inference for Hurricane Ida Project. (Fully my own work)
 
 - `utils` various helper functions
 
